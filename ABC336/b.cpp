@@ -2,5 +2,14 @@
 using namespace std;
 
 int main(void) {
-    // 1/25にABC336のC
+    int n;
+    cin >> n;
+
+    for (int i = 0;; ++i) {
+        if (n & (1 << i)) {
+            cout << i << endl;
+            break;
+        }
+    }
+    return 0;
 }
