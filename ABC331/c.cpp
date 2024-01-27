@@ -17,7 +17,6 @@ int main(void) {
         }
         B[i] = sum;
     }
-
     for (int i = 0; i < N; i++) {
         cout << B[i] << ' ';
     }
