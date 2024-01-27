@@ -27,6 +27,7 @@ int main(void) {
     for (int i = 1; i <= n; i++) {
         cout << ans[i] + 1 << ' ';
     }
+    
     cout << endl;
     return 0;
 }
