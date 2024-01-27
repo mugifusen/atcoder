@@ -18,5 +18,6 @@ int main(void) {
     reverse(a.begin(), a.end());
     for (auto& x: a) cout << x*2;
     cout << endl;
+    
     return 0;
 }
