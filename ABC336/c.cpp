@@ -15,7 +15,7 @@ int main(void) {
     if (a.empty()) {
         a.push_back(0);
     }
-    reverse(begin(a), end(a));
+    reverse(a.begin(), a.end());
     for (auto& x: a) cout << x*2;
     cout << endl;
     return 0;
