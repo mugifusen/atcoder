@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// vectorの末尾に要素xを追加するのはans.push_back(x)
+// vectorの末尾からx番目の要素を参照するにはans[ans.size()-x]
 int main(void) {
     int n;
     cin >> n;
