@@ -2,32 +2,15 @@
 using namespace std;
 
 int main(void) {
-    int n, s;
+    int n, first;
     cin >> n;
-    
-    vector<int> a(n+1), d(n+1);
-    for (int i = 1; i <= n; i++) {
-        cin >> a[i];
-        if (a[i] == -1) {
-            s = i;
+    vector<int> a(n),b(n,n);
+    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < n; ++i) {
+        if (a[i] < 0) {
+            first = i+1;
         } else {
-            a[i]--;
+            b[a[i]] = i; // 理解だめです。ご飯後
         }
     }
-    for (int i = 1; i <= n; i++) {
-        if (a[i] != -1) {
-            d[a[i]] = i;
-        }
-    }
-    vector<int> ans = {s};
-    for (int i = 1; i < n; i++) {
-        s = d[s];
-        ans.push_back(s);
-    }
-    for (int i = 1; i <= n; i++) {
-        cout << ans[i] + 1 << ' ';
-    }
-    
-    cout << endl;
-    return 0;
 }

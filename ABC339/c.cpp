@@ -1,15 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i,n) for (int i = 0; i < (n); ++i)
+using ll = long long;
 
-// A問題で時間を溶かした結果やってません...
 int main(void) {
     int n;
-    vector<unsigned int> a(n);
-    rep(i,n) cin >> a[i];
-    unsigned int sum=0;
-    for (unsigned x = 0;; ++x) {
-        for (int i = 0; i < n; ++i) {
-        }
+    cin >> n;
+    vector<ll> a(n);
+    for (int i = 0; i < n; ++i) cin >> a[i];
+    ll m = 0, sum = 0;
+    for (int i = 0; i < n; ++i) {
+        sum += a[i];
+        m = min(m, sum); // mは負の値
     }
+    cout << sum-m << endl;
+    return 0;
 }
