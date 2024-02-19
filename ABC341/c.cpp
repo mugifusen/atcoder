@@ -1,28 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool search_map(vector<string> s, string t, int i, int j) {
-    for (int k = 0; k < t.size(); ++k) {
-        switch(t[k]) {
-            case 'L':
-                j--;
-                break;
-            case 'R':
-                j++;
-                break;
-            case 'U':
-                i--;
-                break;
-            case 'D':
-                i++;
-        }
-        // cout << s[i][j] << ' ' << "i:j = " << i << ' ' << j << endl;
-        if (s[i][j] != '.') return false;
-    }
-    return true;
-}
-
-
 int main(void) {
     int h, w, n;
     string t;
@@ -34,11 +12,20 @@ int main(void) {
     int count = 0;
     for (int i = 1; i < h; ++i) {
         for (int j = 1; j < w; ++j) {
-            if (s[i][j] != '.') {
-                continue;
+            bool flag = true;
+            int I = i; int J = j;
+            if (s[I][J] != '.') continue;
+            for (auto c : t) {
+                if (c == 'L') J--;
+                if (c == 'R') J++;
+                if (c == 'U') I--;
+                if (c == 'D') I++;
+                if (s[I][J] != '.') {
+                    flag = false;
+                    break;
+                }
             }
-            bool ans = search_map(s, t, i, j);
-            if (ans) count++;
+            if (flag) count++;
         }
     }
     cout << count << endl;
