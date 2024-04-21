@@ -8,12 +8,9 @@ int main(void) {
     for (int i = 0; i < t; ++i) {
         cin >> a[i] >> b[i];
     }
-    set<int> unique_num;
-    for (int i = 0; i < t; ++i) {
-        player[a[i]-1] += b[i];
-        for (auto i : player) unique_num.insert(i);
-        cout << unique_num.size() << endl;
-        unique_num.clear();
+    map<int, int> mp;
+    for (int i = 0; i < t; ++i) { 
+        mp
     }
     return 0;
 }
