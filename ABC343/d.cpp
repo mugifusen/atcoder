@@ -10,7 +10,7 @@ int main(void) {
     }
     map<int, int> mp;
     for (int i = 0; i < t; ++i) { 
-        mp
+        mp;
     }
     return 0;
 }
