@@ -1,28 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 
 int main(void) {
-    ll n, l, r;
+    int n, l, r;
     cin >> n >> l >> r;
-    vector<ll> a(n), X(n);
-    for (int i = 0; i < n; i++) {
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) {
         cin >> a[i];
     }
-    for (int i = 0; i < n; i++) {
-        for (int x = l; x <= r; x++) {
-            bool flag = true;
-            for (int y = l; y <= r; y++) {
-                if (abs(x-a[i]) > abs(y-a[i])) flag = false;
-            }
-            if (flag) {
-                X[i] = x;
-                break;
-            }
-        }
-    }
-    for (int i = 0; i < n; i++) {
-        cout << X[i] << ' ';
+    int max_x;
+    for (int i = 0; i < n; ++i) {
+        max_x = max(abs(r-a[i]), abs(l-a[i]));
+        cout << max_x << ' ';
     }
     cout << endl;
     return 0;
