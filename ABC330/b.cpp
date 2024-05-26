@@ -4,14 +4,25 @@ using namespace std;
 int main(void) {
     int n, l, r;
     cin >> n >> l >> r;
-    vector<int> a(n);
+    vector<int> a;
     for (int i = 0; i < n; ++i) {
-        cin >> a[i];
+        int x;
+        cin >> x;
+        a.push_back(x);
     }
-    int max_x;
-    for (int i = 0; i < n; ++i) {
-        max_x = max(abs(r-a[i]), abs(l-a[i]));
-        cout << max_x << ' ';
+    for (int i = 0; i < a.size(); ++i) {
+        int ans;
+        ans = min(max(a[i], l),r);
+        cout << ans << ' ';
+    //     int min;
+    //     if (a[i] <= l) {
+    //         min = l;
+    //     } else if (l < a[i] && a[i] < r) {
+    //         min = a[i];
+    //     } else {
+    //         min = r;
+    //     }
+    //     cout << min << ' ';
     }
     cout << endl;
     return 0;
