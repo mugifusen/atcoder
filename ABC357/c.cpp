@@ -8,13 +8,7 @@ void func(vector<vector<char>>& g_map, int k, int wi, int wj) {
         int grid_c = pow(3, k-1);
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 3; ++j) {
-                if (i == 1 && j == 1) {
-                    for (int k = 0; k < grid_c; ++k) {
-                        for (int l = 0; l < grid_c; ++l) {
-                            g_map[wi + i * grid_c + k][wj + j * grid_c + l] = '.';
-                        }
-                    }
-                } else {
+                if (!(i == 1 && j == 1)) {
                     func(g_map, k-1, wi + i * grid_c, wj + j * grid_c);
                 }
             }
